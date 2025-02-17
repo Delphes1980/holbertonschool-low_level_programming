@@ -1,0 +1,2 @@
+#!/bin/bash
+export CFILE=1-compiler.main.c | gcc -c -o 1-compiler.main.o
