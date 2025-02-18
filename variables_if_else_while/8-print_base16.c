@@ -6,9 +6,9 @@
  */
 int main(void)
 {
-	int numbers;
+	int numbers = 0x7b;
 
-	for (numbers = 0; numbers <= F; numbers++)
+	for (numbers = 0; numbers <= 15; numbers++)
 		putchar(numbers);
 
 	putchar('\n');
