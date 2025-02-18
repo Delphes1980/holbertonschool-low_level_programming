@@ -6,7 +6,7 @@
  */
 int main(void)
 {
-int suite
+int suite;
 
 	for (suite = '0'; suite < 10; suite++)
 		putchar(suite +'0');
