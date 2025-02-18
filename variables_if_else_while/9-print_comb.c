@@ -12,10 +12,9 @@ int suite;
 
 	if (suite == 9)
 
-	continue;
+		continue;
 
-		putchar(suite);
-
+	putchar(suite);
 
 	putchar(',');
 
