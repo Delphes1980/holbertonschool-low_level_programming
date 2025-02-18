@@ -8,12 +8,13 @@ int main(void)
 {
 int suite;
 
-	for (suite = '0'; suite <= 9; suite++)
-		putchar(suite +'0');
+	for (suite = '0'; suite < 10; suite++)
+		putchar(suite + '0');
 
-	putchar(',');
+	if (suite < 9)
+		putchar(',');
 
-	putchar(' ');
+		putchar(' ');
 
 	putchar('\n');
 
