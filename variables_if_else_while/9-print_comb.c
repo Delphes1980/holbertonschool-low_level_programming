@@ -11,10 +11,9 @@ int suite;
 	for (suite = '0'; suite < 10; suite++)
 		putchar(suite + '0');
 
-	if (suite < 9)
-		putchar(',');
+	putchar(',');
 
-		putchar(' ');
+	putchar(' ');
 
 	putchar('\n');
 
