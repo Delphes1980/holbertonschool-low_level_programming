@@ -9,7 +9,7 @@ int main(void)
 	int numbers;
 
 	for (numbers = 30; numbers <= 39; numbers++)
-		putchar(numbers);
+		putchar(numbers + '0');
 
 	putchar('\n');
 	return (0);
