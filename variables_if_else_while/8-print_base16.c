@@ -9,7 +9,7 @@ int main(void)
 	int numbers;
 
 	for (numbers = 0; numbers <= F; numbers++)
-		putchar(numbers + '0');
+		putchar(numbers);
 
 	putchar('\n');
 	return (0);
