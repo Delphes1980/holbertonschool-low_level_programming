@@ -8,7 +8,7 @@ int main(void)
 {
 int suite;
 
-	for (suite = '0'; suite < 10; suite++)
+	for (suite = '0'; suite <= 9; suite++)
 		putchar(suite +'0');
 
 	putchar(',');
