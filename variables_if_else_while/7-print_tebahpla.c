@@ -6,7 +6,7 @@
  */
 int main(void)
 {
-	char alphabet = 'a';
+	char alphabet = 'z';
 
 	for (alphabet = 'z'; alphabet <= 'a'; alphabet--)
 		putchar(alphabet);
