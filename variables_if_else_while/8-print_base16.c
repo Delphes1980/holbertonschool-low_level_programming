@@ -6,10 +6,14 @@
  */
 int main(void)
 {
-	int numbers = 0x7b;
+	int numbers;
+	char letters;
 
-	for (numbers = 0; numbers <= 16; numbers++)
+	for (numbers = 0; numbers < 10; numbers++)
 		putchar(numbers + '0');
+
+	for (letters = 'a'; letters <= 'f'; letters++)
+		putchar(letters);
 
 	putchar('\n');
 	return (0);
