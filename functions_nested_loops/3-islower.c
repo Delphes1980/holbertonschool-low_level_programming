@@ -4,9 +4,10 @@
  *
  * Return: Always 0.
  */
-int main(void)
+	int main(void)
 {
-	char c;
+
+	int c;
 
 	if (c >= 97 && c <= 122)
 	{
