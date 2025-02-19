@@ -12,7 +12,7 @@ int main(void)
 	{
 	return (1);
 	}
-	else
+	else if (c >= 65 && c <= 90)
 	{
 	return (0);
 	}
