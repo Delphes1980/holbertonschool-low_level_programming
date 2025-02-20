@@ -20,7 +20,6 @@ void times_table(void)
 			_putchar(table + '0');
 			_putchar(',');
 			_putchar('.');
-			
 		}
 
 			_putchar('\n');
