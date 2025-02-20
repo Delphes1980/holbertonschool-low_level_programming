@@ -17,7 +17,7 @@ void times_table(void)
 		{
 			int table = num1 * num2;
 
-			_putchar(table + '0');
+			_putchar(table);
 			_putchar(',');
 			_putchar('.');
 		}
