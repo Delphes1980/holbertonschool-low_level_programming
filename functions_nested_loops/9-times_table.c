@@ -29,7 +29,8 @@ void times_table(void)
 				{
 					_putchar(' ');
 				}
-			_putchar(table + '0');
+
+				_putchar(table + '0');
 
 				if (num2 != 9)
 				{
