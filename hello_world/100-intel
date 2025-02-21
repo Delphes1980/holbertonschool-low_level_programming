@@ -1,0 +1,2 @@
+#!/bin/bash
+export CFILE=100-intel.c | gcc -S -masm=intel 100_intel.c
