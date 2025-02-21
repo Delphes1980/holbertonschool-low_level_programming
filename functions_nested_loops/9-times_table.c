@@ -17,7 +17,6 @@ void times_table(void)
 		{
 			int table = num1 * num2;
 
-
 			if (table > 9)
 			{
 				_putchar((table / 10) + '0');
@@ -31,12 +30,12 @@ void times_table(void)
 				}
 
 				_putchar(table + '0');
+			}
 
 				if (num2 != 9)
 				{
 					_putchar(',');
 					_putchar(' ');
-				}
 			}
 		}
 		_putchar('\n');
