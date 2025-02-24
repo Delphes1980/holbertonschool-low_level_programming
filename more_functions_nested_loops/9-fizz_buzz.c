@@ -9,25 +9,22 @@
 int main(void)
 {
 	int n;
-	char f = "Fizz";
-	char b = "Buzz";
-	char fb = "FizzBuzz";
 
 	for (n = 1; n <= 100; n++)
 	{
 		if (n % 3 == 0)
 		{
-			printf("%s", f);
+			printf("Fizz");
 		}
 
 		else if (n % 5 == 0)
 		{
-			printf("%s", b);
+			printf("Buzz");
 		}
 
 		else if (n % 15 == 0)
 		{
-			printf("%s", fb);
+			printf("FizzBUzz");
 		}
 
 		else
@@ -36,10 +33,9 @@ int main(void)
 		}
 
 	putchar(' ');
-
 	}
 
-	putchar('\n');
+	printf("\n");
 
 	return (0);
 }
