@@ -15,19 +15,27 @@ int main(void)
 
 	for (n = 1; n <= 100; n++)
 	{
-		putchar(n);
+		printf("%d", n);
 
 		if (n % 3)
 		{
-			putchar(fizz + '0');
+			printf("%s", fizz);
+		}
 
 		else if (n % 5)
-			putchar(buzz + '0');
-
-		else (n % 3 && n % 5)
-			putchar(fizzbuzz);
+		{
+			printf("%s", buzz);
 		}
+
+		else if (n % 3 && n % 5)
+		{
+			printf("%s", fizzbuzz);
+		}
+	putchar(' ');
+
 	}
 
 	putchar('\n');
+
+	return (0);
 }
