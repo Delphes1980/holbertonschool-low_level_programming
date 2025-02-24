@@ -9,27 +9,25 @@
 int main(void)
 {
 	int n;
-	char fizz = "Fizz";
-	char buzz = "Buzz";
-	char fizzbuzz = "FizzBuzz";
+	char f = "Fizz";
+	char b = "Buzz";
+	char fb = "FizzBuzz";
 
 	for (n = 1; n <= 100; n++)
 	{
-		printf("%d", n);
-
 		if (n % 3 == 0)
 		{
-			printf("%s", fizz);
+			printf("%s", f);
 		}
 
 		else if (n % 5 == 0)
 		{
-			printf("%s", buzz);
+			printf("%s", b);
 		}
 
 		else if (n % 15 == 0)
 		{
-			printf("%s", fizzbuzz);
+			printf("%s", fb);
 		}
 
 		else
