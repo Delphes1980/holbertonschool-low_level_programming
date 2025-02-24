@@ -10,13 +10,12 @@
 void print_diagonal(int n)
 {
 
-	char sign = '\';
-	int i;
+	int i, j;
+	char sign = '\\';
 
 	for (i = 0; i < n; i++)
 	{
-		int j;
-
+		
 		for (j = 0; j < n; j++)
 		{
 			if (i == j)
