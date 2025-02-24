@@ -19,7 +19,7 @@ void print_most_numbers(void)
 			continue;
 		}
 
-	_putchar(num);
+	_putchar(num + '0');
 	}
 
 	_putchar('\n');
