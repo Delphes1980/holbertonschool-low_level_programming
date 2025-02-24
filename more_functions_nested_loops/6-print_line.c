@@ -1,7 +1,7 @@
 #include "main.h"
 
 /**
-* print_line - draws a straight line
+* print_line - check the code
 * @n: number of times the character '_' in printed
 *
 * Return: Always 0
