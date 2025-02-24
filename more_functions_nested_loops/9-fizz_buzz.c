@@ -17,20 +17,26 @@ int main(void)
 	{
 		printf("%d", n);
 
-		if (n % 3)
+		if (n % 3 == 0)
 		{
 			printf("%s", fizz);
 		}
 
-		else if (n % 5)
+		else if (n % 5 == 0)
 		{
 			printf("%s", buzz);
 		}
 
-		else if (n % 3 && n % 5)
+		else if (n % 15 == 0)
 		{
 			printf("%s", fizzbuzz);
 		}
+
+		else
+		{
+			printf("%d", n);
+		}
+
 	putchar(' ');
 
 	}
