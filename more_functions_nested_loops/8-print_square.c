@@ -9,6 +9,8 @@
 
 void print_square(int size)
 {
+	int n;
+
 	while (n-- > 0)
 	{
 		_putchar('#');
