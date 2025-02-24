@@ -1,7 +1,7 @@
 #include "main.h"
 
 /**
-* print_scare - prints a square
+* print_square - prints a square
 * @size: size of the square
 *
 * Return: nothing
@@ -11,6 +11,9 @@ void print_square(int size)
 {
 	int i, j;
 	char sign = '#';
+
+	if (size <= 0)
+		_putchar('\n');
 
 	for (i = 0; i < size; i++)
 	{
