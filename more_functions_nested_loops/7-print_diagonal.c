@@ -11,13 +11,16 @@ void print_diagonal(int n)
 {
 
 	char sign = '\';
+	int i;
 
-	for (int i = 0; i < n; i++)
+	for (i = 0; i < n; i++)
 	{
-		for (int j = 0; j < n; j++)
+		int j;
+
+		for (j = 0; j < n; j++)
 		{
 			if (i == j)
-				_puthcar(sign);
+				_putchar(sign);
 
 			else
 				_putchar(' ');
