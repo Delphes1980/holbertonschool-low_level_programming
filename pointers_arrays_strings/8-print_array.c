@@ -10,14 +10,11 @@
 void print_array(int *a, int n)
 {
 
-	int array[n];
 	int i;
 
 // output each array element's value
 	for (i = 0; i < n; i++)
 
 
-	_putchar(',');
-	_putchar(' ');
-	_putchar('\n');
+	printf("\n");
 }
