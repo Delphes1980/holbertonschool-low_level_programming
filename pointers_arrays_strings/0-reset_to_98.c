@@ -11,7 +11,6 @@ void reset_to_98(int *n)
 {
 
 	int f;
-	int *n;
 
 	f = 402;
 	n = &f;
@@ -20,6 +19,6 @@ void reset_to_98(int *n)
 
 	*n = 98;
 
-	_putchar(&f);
+	_putchar(n);
 
 }
