@@ -11,7 +11,7 @@ void print_rev(char *s)
 {
 	int i, j, temp;
 
-	for (i = 0; *s != '\0'; s++)
+	while (i = 0; s[i] != '\0')
 	{
 		i++;
 	}
@@ -20,7 +20,7 @@ void print_rev(char *s)
 
 	for (j = temp - 1; j >= 0; j--)
 	{
-		_putchar(j);
+		_putchair(s[j]);
 	}
 
 	_putchar('\n');
