@@ -9,7 +9,7 @@
 
 void puts2(char *str)
 {
-	int n;
+	char n;
 
 	n = 0;
 
@@ -20,7 +20,7 @@ void puts2(char *str)
 
 	if (n % 2 == 0)
 	{
-		_putchar(str);
+		_putchar(*str);
 	}
 
 	_putchar('\n');
