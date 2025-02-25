@@ -20,7 +20,7 @@ void puts_half(char *str)
 
 	if (i % 2 == 0)
 	{
-		start = i /2;
+		start = i / 2;
 	}
 
 	else
