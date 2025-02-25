@@ -14,11 +14,12 @@ void rev_string(char *s)
 	for (i = 0; s[i] != '\0'; s++)
 	{
 		i++;
+	}
 
 	temp = i;
 
-		for (j = temp - 1; j >= 0; j--)
-
+	for (j = temp - 1; j >= 0; j--)
+	{
 		_putchar(s[j]);
 	}
 
