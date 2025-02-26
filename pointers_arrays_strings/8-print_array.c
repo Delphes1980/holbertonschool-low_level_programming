@@ -16,7 +16,7 @@ void print_array(int *a, int n)
 
 	i = 0;
 
-	while (str[i] != '\0')
+	while (a[i] != '\0')
 	{
 		i++;
 	}
