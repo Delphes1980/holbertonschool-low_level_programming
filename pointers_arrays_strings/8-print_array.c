@@ -18,13 +18,13 @@ void print_array(int *a, int n)
 
 	while (a[i] != '\0')
 	{
+
+		for (j = 0; j < n; j++)
+		{
+			printf("%d, ", *a++);
+		}
+
 		i++;
 	}
-
-	for (j = 0; j < n; j++)
-	{
-		printf("%d, ", *a++);
-	}
-
 	printf("\n");
 }
