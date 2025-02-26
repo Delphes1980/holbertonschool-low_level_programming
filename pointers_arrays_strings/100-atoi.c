@@ -9,20 +9,17 @@
 
 int _atoi(char *s)
 {
-	int i;
+	int i = 0;
 	int num = 0;
+
+	if (s[i] >= 48 && s[i] <= 57)
+	{
+		num = num * 10 + (s[i] - '0');
+	}
 
 	for (i = 0; s[i] != 0; i++)
 	{
-		if (s[i] >= 48 && s[i] <= 57)
-		{
-			num = num * 10 + (s[i] - '0');
-		}
-
-		else
-		{
-			return 0;
-		}
+		return (0);
 	}
 
 	return (0);
