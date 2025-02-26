@@ -19,11 +19,6 @@ int _atoi(char *s)
 		i++;
 	}
 
-	if (s[0] == '+')
-	{
-		i++;
-	}
-
 	while (s[i] != '\0')
 	{
 
