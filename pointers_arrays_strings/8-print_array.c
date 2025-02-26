@@ -19,7 +19,7 @@ void print_array(int *a, int n)
 
 		if (*a != '\0')
 		{
-			printf("%d, ");
+			printf("%d, ", *a++);
 		}
 
 		printf("%d", *a++);
