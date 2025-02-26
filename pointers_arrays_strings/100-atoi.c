@@ -18,7 +18,7 @@ int _atoi(char *s)
 		i++;
 	}
 
-	while (s[i] == '-' || s[i] == '+')
+	while (s[i] == '-')
 	{
 		if (s[i] == '-')
 		{
@@ -45,5 +45,5 @@ int _atoi(char *s)
 
 	num = num * sign;
 
-	return (num * sign);
+	return (num);
 }
