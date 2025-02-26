@@ -17,9 +17,12 @@ int _atoi(char *s)
 		num = num * 10 + (s[i] - '0');
 	}
 
-	for (i = 0; s[i] != 0; i++)
+	else
 	{
-		return (0);
+		for (i = 0; s[i] != 0; i++)
+		{
+			return (0);
+		}
 	}
 
 	return (0);
