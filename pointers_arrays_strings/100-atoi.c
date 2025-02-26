@@ -11,14 +11,33 @@ int _atoi(char *s)
 {
 	int i = 0;
 	int num = 0;
+	int sign = 0;
+
+	if (s[0] == '-')
+	{
+		sign = -1;
+		i++;
+	}
+
+	if (s[0] == '+')
+	{
+		i++;
+	}
 
 	for (i = 0; s[i] != 0; i++)
 	{
-		if (s[i] >= 48 && s[i] <= 57)
+		if (s[i] >= '0' && s[i] <= '9')
 		{
 			num = num * 10 + (s[i] - '0');
 		}
+
+		else
+		{
+			break;
+		}
 	}
 
-	return (0);
+	num = num * sign;
+
+	return (num);
 }
