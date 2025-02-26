@@ -14,9 +14,14 @@ void print_array(int *a, int n)
 
 	int i;
 
+	if (i != '\0')
+	{
+		printf("%d, ");
+	}
+
 	for (i = 0; i < n; i++)
 	{
-		printf("%d, " != '\0', *a++);
+		printf(*a++);
 	}
 
 	printf("\n");
