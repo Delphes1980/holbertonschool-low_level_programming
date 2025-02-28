@@ -9,17 +9,21 @@
 
 char *leet(char *code)
 {
+	int i, j;
 	char num[] = {4, 3, 0, 7, 1};
-	char letters[] = {aA, eE, oO, tT, lL};
+	char letters[] = {'a', 'A', 'e', 'E', 'o', 'O', 't', 'T', 'l', 'L'};
 
 	for (i = 0; code[i] != '\0'; i++)
 	{
-		if (code[i] == letters[1, 3, 4])
+		for (j = 0; j < 10; j += 2)
 		{
-			letters[1, 3, 4] = num[1, 3, 4];
+			if (code[i] == letters[j] || code[i] == letters[j + 1])
+			{
+				code[i] = num[j / 2];
+				break;
+			}
 		}
 
-		num = code;
 	}
 
 
