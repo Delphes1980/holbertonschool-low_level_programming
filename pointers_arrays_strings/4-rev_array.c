@@ -10,30 +10,24 @@
 
 void reverse_array(int *a, int n)
 {
-	int i, j, k, temp;
+	int i, j, temp;
 
-	j = 0;
-
-	k = 0;
-
-	while (a[j] < n)
+	for (i = 0; i < n; i++)
 	{
 
-		if (a[j] != '\0')
+		if (i < n-1)
 		{
 			_putchar(',');
 			_putchar(' ');
 		}
-
-		j++;
 	}
 
-	k = n - 1;
+	j = n - 1;
 
-	for (i = 0; i < n / 2; j++)
+	for (i = 0; i < j / 2; i++)
 	{
 		temp = a[i];
-		a[i] = a[k];
-		a[k--] = temp;
+		a[i] = a[j];
+		a[j--] = temp;
 	}
 }
