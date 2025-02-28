@@ -9,23 +9,23 @@
 
 char *cap_string(char *str)
 {
-	int i;
+	int i, j;
+	char sep = "\t\n,;!?\"(){}";
 
-	for (i = 0; str[i] != '\0'; i++)
+
+	if (str[i] >= 'a' && str[i] <= 'z')
 	{
-		if (i == 0 || str[i - 1] == ' ')
+		str[i] = str[i] - 32;
+	}
+
+	for (i = 1; str[i] != '\0'; i++)
+	{
+		for (j = 0; sep[j] != '\0'; j++)
 		{
-			if (str[i] >= 'a' && str[i] <= 'z')
+			if (str[i - 1] == sep[j] && ('a' && str[i] <= 'z'))
 			{
 				str[i] = str[i] - 32;
-			}
-
-			else
-			{
-				if (str[i] >= 'A' && str[i] <= 'Z')
-				{
-					str[i] = str[i] + 32;
-				}
+				break;
 			}
 		}
 	}
