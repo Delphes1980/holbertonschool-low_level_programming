@@ -27,7 +27,6 @@ char *cap_string(char *str)
 			if (str[i - 1] == sep[j] && ('a' && str[i] <= 'z'))
 			{
 				str[i] = str[i] - 32;
-				break;
 			}
 		}
 	}
