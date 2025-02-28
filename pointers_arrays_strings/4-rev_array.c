@@ -16,14 +16,14 @@ void reverse_array(int *a, int n)
 
 	while (a[i] != '\0')
 	{
-		_putchar(',');
 		i++;
 	}
 
-	temp = i;
+	temp = *a;
 
 	for (n = temp - 1; n >= 0; n--)
 	{
+		_putchar(',');
 		_putchar(' ');
 	}
 
