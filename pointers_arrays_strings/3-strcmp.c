@@ -22,7 +22,7 @@ int _strcmp(char *s1, char *s2)
 
 	if ((s1[i] != '\0') > (s2[j] != '\0'))
 	{
-		return (1);
+		return (*s2);
 	}
 
 	else if (s1[i] == '\0' && s2[j] == '\0')
@@ -32,6 +32,6 @@ int _strcmp(char *s1, char *s2)
 
 	else
 	{
-		return (-1);
+		return (- *s1);
 	}
 }
