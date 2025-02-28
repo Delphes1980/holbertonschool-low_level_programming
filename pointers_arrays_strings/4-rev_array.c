@@ -10,22 +10,25 @@
 
 void reverse_array(int *a, int n)
 {
-	int i, temp;
+	int i;
 
 	i = 0;
-	temp = *a;
 
-	while (a[i] != '\0')
+	while (a[i] < n)
 	{
-		_putchar(';');
 
-		for (n = temp - 1; n >= 0; n--)
+		if (a[i] != 0)
 		{
-			_putchar(' ');
+			_putchar(',');
 		}
 
 		i++;
 	}
+
+		for (n = a[i] - 1; n >= 0; n--)
+		{
+			_putchar(' ');
+		}
 
 	_putchar('\n');
 }
