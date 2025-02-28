@@ -24,8 +24,7 @@ void reverse_array(int *a, int n)
 			_putchar(',');
 		}
 
-
-		for (n = a[i] - 1; n >= 0; n--)
+		for (n = temp - 1; n >= 0; n--)
 		{
 			_putchar(' ');
 		}
