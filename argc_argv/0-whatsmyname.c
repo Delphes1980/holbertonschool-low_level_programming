@@ -7,10 +7,8 @@
 *
 * Return: Always 0
 */
-int main(int argc, char *argv[])
+int main(int __attribute__((unused)) argc, char *argv[])
 {
-
-	(void) argc;
 
 	_putchar(argv[0]);
 
