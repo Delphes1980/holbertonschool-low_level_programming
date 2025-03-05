@@ -3,6 +3,7 @@
 /**
 * is_prime_helper - cheks if the number is prime
 * @n: number to be checked
+* @i: current divisot being tested
 *
 * Return: 1 if n is a prime number otherwise 0
 */
