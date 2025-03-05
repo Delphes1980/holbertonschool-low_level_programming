@@ -1,4 +1,4 @@
-#include "main.h"
+#include <stdio.h>
 
 /**
 * main - returns an integer
@@ -10,9 +10,7 @@
 int main(int __attribute__((unused)) argc, char *argv[])
 {
 
-	_putchar(argv[0]);
-
-	_putchar('\n');
+	printf("%d\n", argv[0]);
 
 	return (0);
 }
