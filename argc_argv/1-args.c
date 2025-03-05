@@ -3,20 +3,14 @@
 /**
 * main - returns an integer
 * @argc: count of the arguments of the programm
-* @argv: array of pointer to the strings that are argc arguments
+* @argv: array of strings containing the arguments
 *
 * Return: Always 0
 */
 
-int main(int __attribute__((unused)) argc, char *argv[])
+int main(int argc, char __attribute__((unused))*argv[])
 {
-
-	int i;
-
-	for (i = 1; i < argc; i++)
-	{
-		printf("%d\n", i);
-	}
+	printf("%d\n", argc - 1);
 
 	return (0);
 }
