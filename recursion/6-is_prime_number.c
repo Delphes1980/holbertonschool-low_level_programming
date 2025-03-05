@@ -24,7 +24,7 @@ int is_prime_helper(int n, int i)
 }
 
 /**
-* check_prime - returns ifa number is prime
+* is_prime_number - returns if n number is prime
 * @n: number to be checked
 *
 * Return: integer value
