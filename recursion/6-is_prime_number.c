@@ -1,20 +1,30 @@
 #include "main.h"
 
 /**
-* factorial - returns the factorial of a given number
+* check_prime - returns ifa number is prime
 * @n: number to be checked
-* @p: modulus to compute the factorial modulus
-* Return: factorial of a given number
+*
+* Return: integer value
 */
 
-int factorial(int n, int p)
+int check_prime(int n, int i)
 {
-	if (n == 1 || n == 0)
+	if (n <= 1)
+	{
+		return (0);
+	}
+
+	if (n % i == 0 && i > 1)
+	{
+		return (0);
+	}
+
+	if ((n / 1) < i)
 	{
 		return (1);
 	}
 
-	return (n * factorial(n - 1, p) % p);
+	return (check_prime(n, i + 1));
 }
 
 /**
@@ -26,19 +36,5 @@ int factorial(int n, int p)
 
 int is_prime_number(int n)
 {
-	if (n <= 1)
-	{
-		return (0);
-	}
-
-	int fact_mod_n;
-
-	fact_mod = factorial(n - 1, n);
-
-	if (fact_mod_n == n - 1)
-	{
-		return (1);
-	}
-
-	return (0);
+	return (check_prime(n, 1));
 }
