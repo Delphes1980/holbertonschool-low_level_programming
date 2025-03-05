@@ -9,7 +9,8 @@
 */
 int main(int argc, char *argv[])
 {
-	argc = file_name
+
+	(void) argc;
 
 	_putchar(argv[0]);
 
