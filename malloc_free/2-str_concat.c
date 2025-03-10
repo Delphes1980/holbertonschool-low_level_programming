@@ -3,10 +3,10 @@
 
 /**
 * str_concat - concatenates 2 strings
-* @s1: parameter
-* @s2: parameter
+* @s1: first string to concatenate
+* @s2: second string to concatenate
 *
-* Return: NULL is empty string
+* Return: the 2 strings concatenated
 */
 
 char *str_concat(char *s1, char *s2)
