@@ -10,14 +10,14 @@
 
 void *malloc_checked(unsigned int b)
 {
-	unsigned int *mal;
+	void *mal;
 
-	mal = malloc(sizeof(unsigned int) * b);
+	mal = malloc(b);
 
 	if (mal == NULL)
 	{
 		exit(98);
 	}
 
-	exit(0);
+	return (mal);
 }
