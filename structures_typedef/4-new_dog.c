@@ -22,6 +22,28 @@ int _strlen_helper(char *s)
 	return (i);
 }
 
+/**
+* _strcpy - Copy a string
+* @dest: Destination value
+* @src: Source value
+*
+* Return: the pointer to dest
+*/
+
+char *_strcpy(char *dest, char *src)
+{
+	int i;
+
+	for (i = 0; src[i] != '\0'; i++)
+	{
+		dest[i] = src[i];
+	}
+
+	dest[i++] = '\0';
+
+	return (dest);
+}
+
 
 /**
 * new_dog - create a new structure
@@ -34,36 +56,35 @@ int _strlen_helper(char *s)
 
 dog_t *new_dog(char *name, float age, char *owner)
 {
+	dog_t *new;
 
-	new_dog = (dog_t *)malloc(sizeof(dog_t));
+	new = (dog_t *)malloc(sizeof(dog_t));
 
-	if (new_dog == NULL)
+	if (new == NULL)
 	{
 		return (NULL);
 	}
 
-	new_dog->name = malloc(sizeof(char) * _strlen_helper(name) + 1);
+	new->name = malloc(sizeof(char) * _strlen_helper(name) + 1);
 
-	if (new_dog->name == NULL)
+	if (new->name == NULL)
 	{
-		free(new_dog);
+		free(new);
 		return (NULL);
 	}
 
-	new_dog->owner = malloc(sizeof(char) * _strlen_helper(owner) + 1);
+	new->owner = malloc(sizeof(char) * _strlen_helper(owner) + 1);
 
-	if (new_dog->owner == NULL)
+	if (new->owner == NULL)
 	{
-		free(new_dog->name);
-		free(new_dog);
+		free(new->name);
+		free(new);
 		return (NULL);
 	}
 
-	new_dog->name = dog_t->name;
-	new_dog->age = dog_t->age;
-	new_dog->owner = dog_t->owner;
+	new->name = _strcpy(new->name, name);
+	new->age = age;
+	new->owner = _strcpy(new->owner, owner);
 
-	new_dog->name = name;
-	new_dog->age = age;
-	new_dog->owner = owner;
+	return (new);
 }
