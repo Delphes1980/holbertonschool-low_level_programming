@@ -7,7 +7,7 @@
 * _strlen_helper - helps find the length of a string
 * @s: parameter
 *
-* Return: always 0
+* Return: the lenght of the string
 */
 
 int _strlen_helper(char *s)
