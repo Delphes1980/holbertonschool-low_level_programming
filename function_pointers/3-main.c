@@ -15,16 +15,16 @@ int main(int argc, char *argv[])
 {
 	int num1, num2;
 
-	if (strcmp(argv[], ops[].op) != 0)
-	{
-		printf("Error\n");
-		exit(99);
-	}
-
 	if (argc != 4)
 	{
 		printf("Error\n");
 		exit(98);
+	}
+
+	if (strcmp(argv[], ops[].op) != 0)
+	{
+		printf("Error\n");
+		exit(99);
 	}
 
 	num1 = atoi(argv[1]);
