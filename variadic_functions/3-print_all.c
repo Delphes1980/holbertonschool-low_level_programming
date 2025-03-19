@@ -11,18 +11,6 @@
 
 void print_all(const char * const format, ...)
 {
-
-/**
-* struct format - structure with different types of arguments
-* @c: first element
-* @i: second element
-* @f: third element
-* @s: fourth element
-*
-* Description: a structure that includes different types
-* of arguments passed by the  users
-*/
-
 	int i = 0;
 	const char *string, *s = "";
 
