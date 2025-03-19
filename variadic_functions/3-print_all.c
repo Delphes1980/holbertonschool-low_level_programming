@@ -6,7 +6,7 @@
 * print_all - function that prints anything
 * @format: list of types of arguments passed to the function
 *
-* Return: (nil) if the string is NULL otherwise prints anything
+* Return: nothing
 */
 
 void print_all(const char * const format, ...)
@@ -27,7 +27,7 @@ void print_all(const char * const format, ...)
 				break;
 
 			case 'i':
-				printf("%s%d", s, va_arg(whole, int));
+				printf("%s%i", s, va_arg(whole, int));
 				break;
 
 			case 'f':
