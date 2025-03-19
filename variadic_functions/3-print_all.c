@@ -48,14 +48,15 @@ void print_all(const char * const format, ...)
 
 			case 's':
 				string = va_arg(whole, char *);
-				if (!string)
+				if (string == NULL)
 					string = "(nil)";
-					printf("%s%s", s, string);
+				printf("%s%s", s, string);
 				break;
 		}
 		s = ",";
 		i++;
 	}
+
 	va_end(whole);
 	printf("\n");
 }
