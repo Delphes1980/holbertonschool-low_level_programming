@@ -24,42 +24,38 @@ void print_all(const char * const format, ...)
 */
 
 	int i = 0;
+	const char *string, *s = "";
 
 	va_list whole;
 
 	va_start(whole, format);
 
-	while (i < format[i])
+	while (format[i] != 0)
 	{
-		switch (format) {
-			case c:
-				printf("%s", va_arg(whole, char));
+		switch (format[i])
+		{
+			case 'c':
+				printf("%s%c", s, va_arg(whole, int));
 				break;
 
-			case i:
-				printf("%d", va_arg(whole, int));
+			case 'i':
+				printf("%s%d", s, va_arg(whole, int));
 				break;
 
-			case f:
-				printf("%f", va_arg(whole, float));
+			case 'f':
+				printf("%s%f", s, va_arg(whole, double));
 				break;
 
-			case s:
-				if (s == NULL)
-				{
-					printf("%s", "(nil)");
-				}
-
-				printf("%s", va_arg(whole, char *));
+			case 's':
+				string = va_arg(whole, char *);
+				if (!string)
+					string = "(nil)";
+					printf("%s%s", s, string);
 				break;
-			}
-
-			printf("%s", format[i]);
-
+		}
+		s = ",";
 		i++;
 	}
-
 	va_end(whole);
-
 	printf("\n");
 }
