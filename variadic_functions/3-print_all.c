@@ -23,13 +23,6 @@ void print_all(const char * const format, ...)
 * of arguments passed by the  users
 */
 
-	struct format{
-		char c
-		int i
-		float f
-		char * s
-	};
-
 	int i = 0;
 
 	va_list whole;
@@ -38,17 +31,28 @@ void print_all(const char * const format, ...)
 
 	while (i < format[i])
 	{
-		if (format.c == va_arg(whole, char) &&
-			format.i == va_arg(whole, int) &&
-			format.f == va_arg(whole, float) &&
-			format.s == va_arg(whole, char *);
-			{
-				if (format.s == NULL)
+		switch (format) {
+			case c:
+				printf("%s", va_arg(whole, char));
+				break;
+
+			case i:
+				printf("%d", va_arg(whole, int));
+				break;
+
+			case f:
+				printf("%f", va_arg(whole, float));
+				break;
+
+			case s:
+				if (s == NULL)
 				{
 					printf("%s", "(nil)");
 				}
+
+				printf("%s", va_arg(whole, char *));
+				break;
 			}
-			)
 
 			printf("%s", format[i]);
 
