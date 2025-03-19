@@ -13,7 +13,8 @@
 
 int main(int argc, char *argv[])
 {
-	int num1, num2;
+	int num1, num2, result;
+	int (*operation)(int int);
 
 	if (argc != 4)
 	{
@@ -21,7 +22,9 @@ int main(int argc, char *argv[])
 		exit(98);
 	}
 
-	if (strcmp(argv[], ops[].op) != 0)
+	operation = get_op_func(argv[2]);
+
+	if (operation == 0)
 	{
 		printf("Error\n");
 		exit(99);
@@ -30,7 +33,9 @@ int main(int argc, char *argv[])
 	num1 = atoi(argv[1]);
 	num2 = atoi(argv[3]);
 
-	printf("%d\n", ops[].f(num1, num2));
+	result = operation(num1, num2);
+
+	printf("%d\n", result);
 
 	return (0);
 }
