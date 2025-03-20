@@ -41,7 +41,9 @@ void print_all(const char * const format, ...)
 				printf("%s%s", s, string);
 				break;
 
-			define;
+			default:
+				i++;
+				continue;
 		}
 		s = ", ";
 		i++;
