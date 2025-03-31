@@ -1,6 +1,26 @@
 #include "lists.h"
 
 /**
+* _strlen - function that returns the length of a string
+* @s: parameter
+*
+* Return: Always 0
+*/
+
+int _strlen(const char *s)
+{
+
+	int i;
+
+	for (i = 0; *s != '\0'; s++)
+	{
+		i++;
+	}
+
+	return (i);
+}
+
+/**
  * add_node - adds a new node
  * @head: pointer to the head of the list
  * @str: pointer to the string
@@ -25,6 +45,7 @@ list_t *add_node(list_t **head, const char *str)
 	}
 
 	temp->str = strdup(str);
+	temp->len = _strlen(str);
 
 	if (temp->str == NULL)
 	{
