@@ -26,6 +26,7 @@ int open_files(const char *source_file, const char *dest_file,
 
 	/*Create/open the dest. file with write-only and truncate it if it exists*/
 	*destination_fd = open(dest_file, O_CREAT | O_WRONLY | O_TRUNC, 0664);
+
 	if (*destination_fd == -1)
 	{
 		close(*source_fd);
@@ -109,6 +110,7 @@ int copy_file(const char *source_file, const char *dest_file)
 
 	/* Open source and destination files */
 	result = open_files(source_file, dest_file, &source_fd, &destination_fd);
+
 	if (result != 0)
 	{
 		return (result);
@@ -116,6 +118,7 @@ int copy_file(const char *source_file, const char *dest_file)
 
 	/* Copy content from source file to destination file */
 	result = copy_content(source_fd, destination_fd);
+
 	if (result != 0)
 	{
 		close_files(source_fd, destination_fd);
