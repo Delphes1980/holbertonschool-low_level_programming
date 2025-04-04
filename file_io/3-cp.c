@@ -23,7 +23,7 @@ int open_files(const char *source_file, const char *dest_file,
 		return (98);
 	}
 
-	/*Create/open the dest file with write-only and truncate it if it exists*/
+	/*Create/open the dest. file with write-only and truncate it if it exists*/
 	*destination_fd = open(dest_file, O_CREAT | O_WRONLY | O_TRUNC, 0664);
 	if (*destination_fd == -1)
 	{
@@ -45,8 +45,15 @@ int open_files(const char *source_file, const char *dest_file,
 int close_files(int source_fd, int destination_fd)
 {
 	/* Close both file descriptors */
-	if (close(source_fd) == -1 || close(destination_fd) == -1)
+	if (close(source_fd) == -1)
 	{
+		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", source_fd);
+		return (100);
+	}
+
+	if (close(destination_fd) == -1)
+	{
+		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", destination_fd);
 		return (100);
 	}
 
@@ -143,10 +150,6 @@ int main(int argc, char **argv)
 	else if (result == 99)
 	{
 		dprintf(STDERR_FILENO, "Error: Can't write to %s\n", argv[2]);
-	}
-	else if (result == 100)
-	{
-		dprintf(STDERR_FILENO, "Error: Can't close file descriptor\n");
 	}
 
 	return (result);
