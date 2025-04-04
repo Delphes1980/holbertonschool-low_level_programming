@@ -20,6 +20,7 @@ int open_files(const char *source_file, const char *dest_file,
 	*source_fd = open(source_file, O_RDONLY);
 	if (*source_fd == -1)
 	{
+		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", source_file);
 		return (98);
 	}
 
@@ -28,6 +29,7 @@ int open_files(const char *source_file, const char *dest_file,
 	if (*destination_fd == -1)
 	{
 		close(*source_fd);
+		dprintf(STDERR_FILENO, "Error: Can't write to %s\n", dest_file);
 		return (99);
 	}
 
@@ -79,12 +81,14 @@ int copy_content(int source_fd, int destination_fd)
 		bytes_written = write(destination_fd, buffer, bytes_read);
 		if (bytes_written != bytes_read)
 		{
+			dprintf(STDERR_FILENO, "Error: Can't write to file descriptor\n");
 			return (99);
 		}
 	}
 
 	if (bytes_read == -1)
 	{
+		dprintf(STDERR_FILENO, "Error: Can't read from file descriptor\n");
 		return (98);
 	}
 
@@ -143,14 +147,10 @@ int main(int argc, char **argv)
 	/* Copy file content and handle errors */
 	result = copy_file(argv[1], argv[2]);
 
-	if (result == 98)
+	if (result != 0)
 	{
-		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", argv[1]);
-	}
-	else if (result == 99)
-	{
-		dprintf(STDERR_FILENO, "Error: Can't write to %s\n", argv[2]);
+		return (result);
 	}
 
-	return (result);
+	return (0);
 }
