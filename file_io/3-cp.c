@@ -15,44 +15,43 @@ void copy_file(const char *source_file, const char *destination_file)
 {
 	int source_fd, destination_fd, bytes_read;
 	char buffer[1024];
-	/*Open source file in read-only mode*/
-	source_fd = open(source_file, O_RDONLY);
 
-	if (source_fd == -1 || source_file == NULL)
-	{dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", source_file);
-		exit(98); }
-	/*Create/open destination file with write-only and truncate it if it exists*/
+	source_fd = open(source_file, O_RDONLY);
+	if (!source_file || source_fd == -1)
+	{
+		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", source_file);
+		exit(98);
+	}
+
 	destination_fd = open(destination_file, O_CREAT | O_WRONLY | O_TRUNC, 0664);
 
-	if (destination_fd == -1)
-	{dprintf(STDERR_FILENO, "Error: Can't write to %s\n", destination_file);
-		close(source_fd);
-		exit(99); }
-	/*Read from source and write to destination in blocks*/
-	while ((bytes_read = read(source_fd, buffer, sizeof(buffer))) > 0)
+	while ((bytes_read = read(source_fd, buffer, 1024)) > 0)
 	{
-	/*Is the number of bytes_written different from the number of bytes_read?*/
-		ssize_t bytes_written = write(destination_fd, buffer, bytes_read);
-
-		if (bytes_written != bytes_read)
-		{dprintf(STDERR_FILENO, "Error: Can't write to %s\n", destination_file);
-			close(source_fd);
-			close(destination_fd);
-			exit(99); }
+		if (write(destination_fd, buffer, bytes_read)
+		!= bytes_read || destination_fd == -1)
+		{
+			dprintf(STDERR_FILENO, "Error: Can't write to %s\n", destination_file);
+			exit(99);
+		}
 	}
-	/*If reading failed*/
+
 	if (bytes_read == -1)
-	{dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", source_file);
-		close(source_fd);
-		close(destination_fd);
-		exit(98); }
-	/*Close both files safely*/
+	{
+		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", source_file);
+		exit(98);
+	}
+
 	if (close(source_fd) == -1)
-	{dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", source_fd);
-		exit(100); }
+	{
+		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", source_fd);
+		exit(100);
+	}
+
 	if (close(destination_fd) == -1)
-	{dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", destination_fd);
-		exit(100); }
+	{
+		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", destination_fd);
+		exit(100);
+	}
 }
 
 /**
@@ -65,6 +64,7 @@ void copy_file(const char *source_file, const char *destination_file)
 
 int main(int argc, char **argv)
 {
+	/*If the number of arguments is not the correct one*/
 	if (argc != 3)
 	{
 		dprintf(STDERR_FILENO, "Usage: cp file_from file_to\n");
